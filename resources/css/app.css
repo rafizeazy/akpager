@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+@import "flowbite/src/themes/default";
+@import "flowbite/src/components/accordion/accordion";
+@import "flowbite/src/components/button/button";
+@import "flowbite/src/components/card/card";
+@import "flowbite/src/components/modal/modal";
+@import "flowbite/src/components/navbar/navbar";
+@import "flowbite/src/components/dropdown/dropdown";
+@import "flowbite/src/components/forms/forms";
+@import "flowbite/src/components/tabs/tabs";
