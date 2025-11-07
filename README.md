@@ -1,4 +1,4 @@
-# AKPager - Business Management System
+# AKPager - Company Profile with Management System
 
 <p align="center">
   <img src="public/assets/images/logos/logo.png" alt="AKPager Logo" width="200">
@@ -258,7 +258,7 @@ This project is open-sourced software licensed under the [MIT license](LICENSE).
 
 ## 👤 Author
 
-**Rafi Zeazy**
+**RafiZeazy**
 - GitHub: [@rafizeazy](https://github.com/rafizeazy)
 
 ## 🙏 Acknowledgments
@@ -273,7 +273,7 @@ This project is open-sourced software licensed under the [MIT license](LICENSE).
 Need help? 
 - Check the [Documentation](BACKEND_TECHNICAL_DOCUMENTATION.md)
 - Open an [Issue](https://github.com/rafizeazy/akpager/issues)
-- Contact: [Your Email]
+- Contact: [rafiimanullah@gmail.com]
 
 ---
 
