@@ -1,45 +1,52 @@
 # Transaction Auto-Fill dari Invoice
 
 ## Overview
+
 Fitur ini memungkinkan Anda untuk membuat transaksi secara otomatis berdasarkan nomor invoice yang ada di sistem. Ketika Anda memilih invoice, form transaksi akan otomatis terisi dengan data dari invoice tersebut.
 
 ## Cara Menggunakan
 
 ### 1. Akses Menu Transaction
-- Login ke Filament Admin Panel: `http://localhost/admin`
-- Klik menu **Transactions** di sidebar
-- Klik tombol **New Transaction** atau **Create**
+
+-   Login ke Filament Admin Panel: `http://localhost/admin`
+-   Klik menu **Transactions** di sidebar
+-   Klik tombol **New Transaction** atau **Create**
 
 ### 2. Pilih Invoice (Opsional)
+
 Di bagian atas form, Anda akan melihat section **"Invoice Information"**:
-- Klik dropdown **"Invoice Number"**
-- Ketik untuk mencari invoice (searchable)
-- Pilih invoice yang ingin dijadikan transaksi
+
+-   Klik dropdown **"Invoice Number"**
+-   Ketik untuk mencari invoice (searchable)
+-   Pilih invoice yang ingin dijadikan transaksi
 
 ### 3. Auto-Fill Otomatis
+
 Setelah memilih invoice, field berikut akan **otomatis terisi**:
 
-| Field | Auto-Fill Value |
-|-------|-----------------|
-| **Type** | Expense (karena invoice = pengeluaran) |
-| **Category** | invoice_payment |
-| **Description** | "Payment for Invoice INV-2025-00001" |
-| **Amount** | Balance invoice (sisa yang belum dibayar) |
-| **Transaction Date** | Tanggal hari ini |
-| **Reference Number** | Nomor invoice |
-| **Vendor/Customer** | Nama vendor dari invoice |
-| **Notes** | Detail invoice (Total, Paid, Balance) |
+| Field                | Auto-Fill Value                           |
+| -------------------- | ----------------------------------------- |
+| **Type**             | Expense (karena invoice = pengeluaran)    |
+| **Category**         | invoice_payment                           |
+| **Description**      | "Payment for Invoice INV-2025-00001"      |
+| **Amount**           | Balance invoice (sisa yang belum dibayar) |
+| **Transaction Date** | Tanggal hari ini                          |
+| **Reference Number** | Nomor invoice                             |
+| **Vendor/Customer**  | Nama vendor dari invoice                  |
+| **Notes**            | Detail invoice (Total, Paid, Balance)     |
 
 ### 4. Edit & Simpan
-- Review data yang sudah terisi
-- Edit jika perlu (semua field masih bisa diubah)
-- Pilih **Payment Method** (Cash, Bank Transfer, Credit Card, Check)
-- Upload attachment jika ada (receipt/bukti transfer)
-- Klik **Create** atau **Save**
+
+-   Review data yang sudah terisi
+-   Edit jika perlu (semua field masih bisa diubah)
+-   Pilih **Payment Method** (Cash, Bank Transfer, Credit Card, Check)
+-   Upload attachment jika ada (receipt/bukti transfer)
+-   Klik **Create** atau **Save**
 
 ## Struktur Form
 
 ### Section 1: Invoice Information (Collapsible)
+
 ```
 ┌─────────────────────────────────────────────┐
 │ Invoice Information                          │
@@ -52,6 +59,7 @@ Setelah memilih invoice, field berikut akan **otomatis terisi**:
 ```
 
 ### Section 2: Transaction Details
+
 ```
 ┌─────────────────────────────────────────────┐
 │ Transaction Details                          │
@@ -65,6 +73,7 @@ Setelah memilih invoice, field berikut akan **otomatis terisi**:
 ```
 
 ### Section 3: Payment Information
+
 ```
 ┌─────────────────────────────────────────────┐
 │ Payment Information                          │
@@ -76,6 +85,7 @@ Setelah memilih invoice, field berikut akan **otomatis terisi**:
 ```
 
 ### Section 4: Additional Information (Collapsible)
+
 ```
 ┌─────────────────────────────────────────────┐
 │ Additional Information                       │
@@ -89,6 +99,7 @@ Setelah memilih invoice, field berikut akan **otomatis terisi**:
 ## Database Schema
 
 ### Relasi Baru
+
 ```php
 // Transaction Model
 public function invoice(): BelongsTo
@@ -101,50 +112,57 @@ public function invoice(): BelongsTo
 ```
 
 ### Field Transaction
-- `id`: Primary Key
-- `invoice_id`: Foreign Key (nullable) → invoices.id
-- `type`: enum('income', 'expense')
-- `category`: string
-- `description`: string
-- `amount`: decimal(15,2)
-- `transaction_date`: date
-- `reference_number`: string (nullable)
-- `vendor_customer`: string (nullable)
-- `payment_method`: enum('cash', 'bank_transfer', 'credit_card', 'check')
-- `notes`: text (nullable)
-- `attachment`: string (nullable)
+
+-   `id`: Primary Key
+-   `invoice_id`: Foreign Key (nullable) → invoices.id
+-   `type`: enum('income', 'expense')
+-   `category`: string
+-   `description`: string
+-   `amount`: decimal(15,2)
+-   `transaction_date`: date
+-   `reference_number`: string (nullable)
+-   `vendor_customer`: string (nullable)
+-   `payment_method`: enum('cash', 'bank_transfer', 'credit_card', 'check')
+-   `notes`: text (nullable)
+-   `attachment`: string (nullable)
 
 ## Fitur Form
 
 ### Auto-Fill Logic
+
 Ketika invoice dipilih, sistem akan:
+
 1. Query invoice berdasarkan ID
 2. Extract data invoice
 3. Set nilai ke form fields menggunakan Livewire's `$set` function
 4. Format angka dengan format Indonesia (Rp x.xxx,xx)
 
 ### Live Updates
-- Form menggunakan `->live()` pada invoice selector
-- Perubahan langsung terlihat tanpa refresh
-- User tetap bisa edit manual setelah auto-fill
+
+-   Form menggunakan `->live()` pada invoice selector
+-   Perubahan langsung terlihat tanpa refresh
+-   User tetap bisa edit manual setelah auto-fill
 
 ### Validation
-- Type: required
-- Category: required
-- Description: required
-- Amount: required, numeric, min 0
-- Transaction Date: required
-- Payment Method: required
+
+-   Type: required
+-   Category: required
+-   Description: required
+-   Amount: required, numeric, min 0
+-   Transaction Date: required
+-   Payment Method: required
 
 ### File Upload
-- Location: `storage/app/transactions/attachments/`
-- Allowed: PDF, Images (jpg, png, gif, etc.)
-- Max Size: 5MB
-- Public accessible via storage link
+
+-   Location: `storage/app/transactions/attachments/`
+-   Allowed: PDF, Images (jpg, png, gif, etc.)
+-   Max Size: 5MB
+-   Public accessible via storage link
 
 ## Use Cases
 
 ### 1. Bayar Invoice Penuh
+
 ```
 Invoice Balance: Rp 10.000.000
 → Auto-fill amount: 10.000.000
@@ -154,6 +172,7 @@ Invoice Balance: Rp 10.000.000
 ```
 
 ### 2. Bayar Invoice Sebagian
+
 ```
 Invoice Balance: Rp 10.000.000
 → Auto-fill amount: 10.000.000
@@ -163,6 +182,7 @@ Invoice Balance: Rp 10.000.000
 ```
 
 ### 3. Transaksi Tanpa Invoice
+
 ```
 → Lewati Invoice Information section
 → Isi manual semua fields
@@ -172,38 +192,46 @@ Invoice Balance: Rp 10.000.000
 ## Integrasi dengan Invoice
 
 ### Tidak Auto-Update Invoice
+
 ⚠️ **PENTING**: Membuat transaction TIDAK otomatis update invoice status!
 
 Untuk update invoice payment:
+
 1. Buka menu **Invoices**
 2. Pilih invoice yang sudah dibayar
 3. Klik **Add Payment**
 4. Atau manual update status invoice
 
 ### Future Enhancement
+
 Bisa ditambahkan:
-- Auto-update invoice paid_amount setelah create transaction
-- Auto-change invoice status (unpaid → partial → paid)
-- Validation: amount tidak boleh > balance
-- Link transaction ke payment (jika ada payment model)
+
+-   Auto-update invoice paid_amount setelah create transaction
+-   Auto-change invoice status (unpaid → partial → paid)
+-   Validation: amount tidak boleh > balance
+-   Link transaction ke payment (jika ada payment model)
 
 ## Technical Details
 
 ### Files Modified
+
 1. **Migration**: `2025_11_02_143705_add_invoice_id_to_transactions_table.php`
-   - Menambah kolom `invoice_id` (foreign key)
+
+    - Menambah kolom `invoice_id` (foreign key)
 
 2. **Model**: `app/Models/Transaction.php`
-   - Menambah `invoice_id` ke fillable
-   - Menambah relasi `invoice()`
+
+    - Menambah `invoice_id` ke fillable
+    - Menambah relasi `invoice()`
 
 3. **Form**: `app/Filament/Resources/Transactions/Schemas/TransactionForm.php`
-   - Restructure dengan Sections
-   - Menambah Invoice selector dengan auto-fill
-   - Live updates using Livewire
-   - Better UX dengan helper texts
+    - Restructure dengan Sections
+    - Menambah Invoice selector dengan auto-fill
+    - Live updates using Livewire
+    - Better UX dengan helper texts
 
 ### Livewire Integration
+
 ```php
 Select::make('invoice_id')
     ->live()  // Enable reactive updates
@@ -219,33 +247,38 @@ Select::make('invoice_id')
 ## Testing
 
 ### Manual Test
+
 1. Pastikan ada invoice di database:
-   ```sql
-   SELECT * FROM invoices WHERE balance > 0;
-   ```
+
+    ```sql
+    SELECT * FROM invoices WHERE balance > 0;
+    ```
 
 2. Buka form transaction
 3. Pilih invoice dari dropdown
 4. Verify auto-fill bekerja:
-   - Amount = invoice balance
-   - Vendor = invoice vendor_name
-   - Reference = invoice number
-   - Notes berisi detail invoice
+
+    - Amount = invoice balance
+    - Vendor = invoice vendor_name
+    - Reference = invoice number
+    - Notes berisi detail invoice
 
 5. Save dan check database:
-   ```sql
-   SELECT * FROM transactions WHERE invoice_id IS NOT NULL;
-   ```
+    ```sql
+    SELECT * FROM transactions WHERE invoice_id IS NOT NULL;
+    ```
 
 ### Edge Cases
-- ✅ Invoice dengan balance = 0 (masih bisa dipilih)
-- ✅ Invoice NULL (transaksi manual)
-- ✅ Edit setelah auto-fill (allowed)
-- ✅ Multiple transaction untuk 1 invoice (allowed)
+
+-   ✅ Invoice dengan balance = 0 (masih bisa dipilih)
+-   ✅ Invoice NULL (transaksi manual)
+-   ✅ Edit setelah auto-fill (allowed)
+-   ✅ Multiple transaction untuk 1 invoice (allowed)
 
 ## Troubleshooting
 
 ### Dropdown Invoice Kosong
+
 ```bash
 # Check apakah ada invoice
 php artisan tinker
@@ -256,6 +289,7 @@ php artisan db:seed --class=InvoiceSeeder
 ```
 
 ### Auto-fill Tidak Bekerja
+
 ```bash
 # Clear cache
 php artisan optimize:clear
@@ -265,6 +299,7 @@ php artisan livewire:list
 ```
 
 ### Error Save Transaction
+
 ```bash
 # Check migration
 php artisan migrate:status
@@ -274,6 +309,7 @@ php artisan migrate:fresh --seed
 ```
 
 ### File Upload Error
+
 ```bash
 # Create storage link
 php artisan storage:link
@@ -286,71 +322,82 @@ php artisan storage:link
 ## Best Practices
 
 ### 1. Naming Convention
-- Category untuk invoice: `invoice_payment`
-- Reference: gunakan invoice number
-- Description: jelas dan informatif
+
+-   Category untuk invoice: `invoice_payment`
+-   Reference: gunakan invoice number
+-   Description: jelas dan informatif
 
 ### 2. Amount
-- Gunakan balance (sisa belum bayar), bukan total
-- Allow edit untuk partial payment
-- Validate tidak negatif
+
+-   Gunakan balance (sisa belum bayar), bukan total
+-   Allow edit untuk partial payment
+-   Validate tidak negatif
 
 ### 3. Attachment
-- Selalu upload bukti transfer
-- Gunakan format PDF untuk official documents
-- Compress image sebelum upload (max 5MB)
+
+-   Selalu upload bukti transfer
+-   Gunakan format PDF untuk official documents
+-   Compress image sebelum upload (max 5MB)
 
 ### 4. Notes
-- Auto-generated notes sudah include detail invoice
-- Tambahkan info tambahan jika perlu
-- Format: clear & readable
+
+-   Auto-generated notes sudah include detail invoice
+-   Tambahkan info tambahan jika perlu
+-   Format: clear & readable
 
 ## Next Steps (Optional)
 
 ### Enhancement Ideas
+
 1. **Auto-Update Invoice**
-   ```php
-   // After transaction created
-   if ($transaction->invoice_id) {
-       $invoice = $transaction->invoice;
-       $invoice->paid_amount += $transaction->amount;
-       $invoice->updatePaymentStatus();
-   }
-   ```
+
+    ```php
+    // After transaction created
+    if ($transaction->invoice_id) {
+        $invoice = $transaction->invoice;
+        $invoice->paid_amount += $transaction->amount;
+        $invoice->updatePaymentStatus();
+    }
+    ```
 
 2. **Validation Amount**
-   ```php
-   TextInput::make('amount')
-       ->rules([
-           fn ($get) => function ($attribute, $value, $fail) use ($get) {
-               $invoiceId = $get('invoice_id');
-               if ($invoiceId) {
-                   $invoice = Invoice::find($invoiceId);
-                   if ($value > $invoice->balance) {
-                       $fail('Amount exceeds invoice balance');
-                   }
-               }
-           }
-       ])
-   ```
+
+    ```php
+    TextInput::make('amount')
+        ->rules([
+            fn ($get) => function ($attribute, $value, $fail) use ($get) {
+                $invoiceId = $get('invoice_id');
+                if ($invoiceId) {
+                    $invoice = Invoice::find($invoiceId);
+                    if ($value > $invoice->balance) {
+                        $fail('Amount exceeds invoice balance');
+                    }
+                }
+            }
+        ])
+    ```
 
 3. **Bulk Payment**
-   - Select multiple invoices
-   - Create one transaction untuk semua
-   - Split amount per invoice
+
+    - Select multiple invoices
+    - Create one transaction untuk semua
+    - Split amount per invoice
 
 4. **Payment Schedule**
-   - Set recurring payment
-   - Auto-create transaction setiap bulan
-   - Link ke invoice
+
+    - Set recurring payment
+    - Auto-create transaction setiap bulan
+    - Link ke invoice
 
 5. **Approval Flow**
-   - Transaction > Rp X perlu approval
-   - Status: draft → pending → approved
-   - Notification ke approver
+    - Transaction > Rp X perlu approval
+    - Status: draft → pending → approved
+    - Notification ke approver
 
 ## Support
+
 Untuk pertanyaan atau issue, check:
-- Laravel docs: https://laravel.com/docs
-- Filament docs: https://filamentphp.com/docs
-- Livewire docs: https://livewire.laravel.com
+
+-   Laravel docs: https://laravel.com/docs
+-   Filament docs: https://filamentphp.com/docs
+-   Livewire docs: https://livewire.laravel.com

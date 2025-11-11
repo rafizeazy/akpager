@@ -2,6 +2,7 @@
 @section('title', $post->title . ' - PT Smartplus Indonesia')
 @section('css')
 <style>
+    
     /* Preserve line breaks and white space in blog content */
     .content-body {
         white-space: pre-line;

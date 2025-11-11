@@ -1,0 +1,586 @@
+================================================================================
+                    INTERNSHIP MONTHLY REPORT
+                    AKPager - Business Management System
+                    Laravel 11 + Filament Andmin Panel
+================================================================================
+
+Intern Name: [Your Name]
+Supervisor: [Supervisor Name]
+Department: Software Development / Web Development
+Period: [Start Date] - [End Date]
+Duration: 3 Months (12 Weeks)
+
+================================================================================
+                              MONTH 1
+================================================================================
+
+WEEK 1 (Week 1 of Internship)
+-------------------------------------------------------------------------------
+Day 1: Project Introduction and Environment Setup
+- Attended project briefing and introduction to AKPager Business Management System
+- Set up development environment (XAMPP, PHP 8.2, Composer, Node.js)
+- Installed Laravel 11 framework and studied project structure
+- Created local MySQL database (smartplusid)
+- Cloned project repository and configured .env file
+
+Day 2: Database Schema and Migration Study
+- Studied database schema design for the project
+- Analyzed Entity Relationship Diagram (ERD) for finance and purchasing modules
+- Ran database migrations using php artisan migrate
+- Created seeders for sample data (users, categories, tags)
+- Tested database connections and verified table structures
+
+Day 3: Laravel Framework Deep Dive
+- Studied Laravel 11 documentation and best practices
+- Learned about MVC architecture implementation in the project
+- Analyzed Models: Transaction, Invoice, PurchaseOrder, Quotation
+- Understood Eloquent ORM relationships (hasMany, belongsTo)
+- Reviewed routing structure in routes/web.php
+
+Day 4: Filament Admin Panel Introduction
+- Introduction to Filament v4.1.10 framework
+- Studied Filament Resources architecture
+- Analyzed existing resources: Categories, Tags, Posts
+- Created first Filament admin user account
+- Explored admin panel navigation and features
+
+Day 5: Frontend Template Integration
+- Studied frontend template structure (Blade components)
+- Analyzed layout files: app.blade.php, header, footer
+- Reviewed CSS framework integration (Bootstrap + Tailwind CSS)
+- Tested responsive design on multiple devices
+- Documentation: Created notes on template customization
+
+
+WEEK 2 (Week 2 of Internship)
+-------------------------------------------------------------------------------
+Day 1: Blog Module Development - Part 1
+- Created Category model and migration (categories table)
+- Implemented CategoryResource in Filament
+- Built CRUD operations for blog categories
+- Added validation rules for category creation
+- Tested category management in admin panel
+
+Day 2: Blog Module Development - Part 2
+- Created Tag model and migration (tags table)
+- Implemented TagResource in Filament
+- Created many-to-many relationship (post_tag pivot table)
+- Added tag management functionality
+- Implemented tag filtering and search features
+
+Day 3: Blog Post Creation Feature
+- Created Post model with title, slug, content, featured_image fields
+- Built PostResource with form schema (TextInput, RichEditor, FileUpload)
+- Implemented relationship between posts, categories, and tags
+- Added image upload functionality for featured images
+- Created post status management (draft, published)
+
+Day 4: WYSIWYG Editor Integration
+- Integrated TipTap WYSIWYG editor for blog content
+- Configured rich text formatting options (bold, italic, lists, links)
+- Added image insertion capability in editor
+- Tested editor functionality and content saving
+- Documentation: Created WYSIWYG_EDITOR_GUIDE.md
+
+Day 5: Blog Frontend Display
+- Created blog listing page     
+- Built blog detail page with comment section
+- Implemented pagination for blog posts
+- Added category and tag filtering on frontend
+- Styled blog pages with responsive design
+
+
+WEEK 3 (Week 3 of Internship)
+-------------------------------------------------------------------------------
+Day 1: Finance Module - Transaction Model Setup
+- Created Transaction model and migration
+- Defined fields: type (income/expense), category, amount, date
+- Added payment_method enum (cash, bank_transfer, credit_card, check)
+- Implemented soft deletes for transaction records
+- Set up model relationships and casts
+
+Day 2: Transaction Resource in Filament
+- Created TransactionResource with form and table schemas
+- Built transaction form with validation rules
+- Implemented type selection (income vs expense)
+- Added amount input with currency formatting (IDR)
+- Created date picker for transaction_date field
+
+Day 3: Transaction Management Features
+- Implemented transaction listing with filters
+- Added search functionality (description, vendor, reference)
+- Created bulk actions (delete, export)
+- Built transaction statistics calculations
+- Added color coding (green for income, red for expense)
+
+Day 4: Transaction Seeder Development
+- Created TransactionSeeder for dummy data generation
+- Generated 270+ sample transactions over 3 months
+- Implemented random transaction types and categories
+- Added realistic amounts for income (5M-50M) and expense (1M-20M)
+- Tested seeder with php artisan db:seed --class=TransactionSeeder
+
+Day 5: Testing and Bug Fixes
+- Conducted thorough testing of transaction CRUD operations
+- Fixed validation errors and edge cases
+- Improved user experience with helper texts
+- Added transaction notes field for additional information
+- Documented transaction module in technical documentation
+
+
+WEEK 4 (Week 4 of Internship)
+-------------------------------------------------------------------------------
+Day 1: Dashboard Widget - Finance Stats
+- Created FinanceStatsWidget for dashboard statistics
+- Implemented total income calculation (current month)
+- Implemented total expense calculation (current month)
+- Added net profit/loss indicator
+- Created trend comparison with previous month (percentage change)
+
+Day 2: Dashboard Widget - Charts
+- Created TransactionChartWidget using Chart.js
+- Implemented pie chart for income vs expense visualization
+- Added data formatting in millions (Rp XM)
+- Created interactive tooltips with detailed amounts
+- Tested chart responsiveness on different screen sizes
+
+Day 3: Dashboard Widget - Category Breakdown
+- Created CategoryBreakdownWidget with bar chart
+- Implemented expense breakdown by category
+- Sorted categories by highest expense
+- Added color coding for visual distinction
+- Created monthly data aggregation
+
+Day 4: Dashboard Widget - Latest Transactions
+- Created LatestTransactionsWidget (table widget)
+- Displayed 10 most recent transactions
+- Added filters: type, payment method, category, date range
+- Implemented searchable columns
+- Added pagination options (10/25/50 per page)
+
+Day 5: Dashboard Polish and Documentation
+- Removed default Filament widgets (AccountWidget, FilamentInfoWidget)
+- Configured widget order and layout
+- Tested all dashboard features with real data
+- Created FILAMENT_DASHBOARD_INFO.md documentation
+- Demonstrated dashboard to supervisor
+
+
+================================================================================
+                              MONTH 2
+================================================================================
+
+WEEK 5 (Week 5 of Internship)
+-------------------------------------------------------------------------------
+Day 1: Purchasing Module - Quotation Model
+- Created Quotation model and migration
+- Defined fields: quotation_number, customer_name, date, total, status
+- Implemented auto-incrementing quotation numbering (QUO-2025-00001)
+- Created QuotationItem model for line items
+- Set up one-to-many relationship between quotations and items
+
+Day 2: Quotation Resource Development
+- Created QuotationResource in Filament
+- Built quotation form with customer information fields
+- Implemented ItemsRelationManager for managing line items
+- Added calculation logic for subtotal, tax, discount, total
+- Created status management (draft, sent, accepted, rejected)
+
+Day 3: Quotation Line Items Management
+- Built item entry form (description, quantity, unit_price, total)
+- Implemented automatic total calculation on item changes
+- Added ability to add/remove multiple items
+- Created validation for item fields
+- Tested calculation accuracy with various scenarios
+
+Day 4: Quotation to Purchase Order Conversion
+- Created PurchaseOrder model and migration
+- Implemented conversion logic from quotation to PO
+- Added "Convert to PO" action button in quotation resource
+- Created PO numbering system (PO-2025-00001)
+- Set up relationship between quotations and purchase orders
+
+Day 5: Purchase Order Management
+- Created PurchaseOrderResource in Filament
+- Built PO form with vendor information
+- Implemented PO status tracking (pending, approved, completed)
+- Added PO items relation manager
+- Created PO approval workflow
+
+
+WEEK 6 (Week 6 of Internship)
+-------------------------------------------------------------------------------
+Day 1: Invoice Module Development
+- Created Invoice model and migration
+- Defined fields: invoice_number, vendor, amount, due_date, status
+- Implemented invoice numbering (INV-2025-00001)
+- Created InvoiceItem model for line items
+- Set up relationship between invoices and purchase orders
+
+Day 2: Invoice Resource Implementation
+- Created InvoiceResource in Filament
+- Built invoice form with vendor and date fields
+- Implemented ItemsRelationManager for invoice items
+- Added payment status tracking (unpaid, partial, paid)
+- Created invoice balance calculation logic
+
+Day 3: Payment Management System
+- Created Payment model and migration
+- Defined fields: invoice_id, amount, payment_date, method
+- Implemented PaymentsRelationManager in invoice resource
+- Added payment recording functionality
+- Created automatic invoice status update on payment
+
+Day 4: Invoice Auto-Update Logic
+- Implemented calculateTotal() method in Invoice model
+- Created updatePaymentStatus() method
+- Added automatic balance calculation (total - paid_amount)
+- Tested payment scenarios (full payment, partial payment)
+- Fixed edge cases in payment calculations
+
+Day 5: Invoice Testing and Refinement
+- Conducted comprehensive testing of invoice workflow
+- Tested PO to Invoice conversion
+- Verified payment calculations accuracy
+- Fixed bugs in status updates
+- Created test cases documentation
+
+
+WEEK 7 (Week 7 of Internship)
+-------------------------------------------------------------------------------
+Day 1: Transaction-Invoice Integration Planning
+- Analyzed requirements for transaction auto-fill feature
+- Designed database schema changes (add invoice_id to transactions)
+- Created migration: add_invoice_id_to_transactions_table.php
+- Added foreign key constraint to invoices table
+- Ran migration and tested database integrity
+
+Day 2: Transaction Model Update
+- Added invoice_id to Transaction fillable fields
+- Implemented invoice() relationship (belongsTo)
+- Updated TransactionResource to include invoice selector
+- Added validation for invoice-related fields
+- Tested model relationships
+
+Day 3: Auto-Fill Feature Implementation
+- Created invoice dropdown with searchable options
+- Implemented live update using Livewire
+- Built afterStateUpdated callback for auto-fill logic
+- Mapped invoice data to transaction fields (amount, vendor, notes)
+- Added helper text for user guidance
+
+Day 4: Auto-Fill Enhancement
+- Improved auto-fill logic to use invoice balance (not total)
+- Added detailed notes generation (invoice total, paid, balance)
+- Implemented currency formatting (Rupiah)
+- Added reference_number auto-fill from invoice_number
+- Created date auto-fill with current date
+
+Day 5: Testing and Documentation
+- Tested auto-fill with various invoice scenarios
+- Fixed form validation conflicts
+- Verified data integrity after auto-fill
+- Created TRANSACTION_AUTO_FILL_GUIDE.md
+- Demonstrated feature to supervisor
+
+
+WEEK 8 (Week 8 of Internship)
+-------------------------------------------------------------------------------
+Day 1: PDF Export - Setup and Configuration
+- Installed barryvdh/laravel-dompdf package via composer
+- Configured DomPDF settings in config/dompdf.php
+- Created PDF view templates directory (resources/views/pdf/)
+- Set up PDF service provider
+- Tested basic PDF generation
+
+Day 2: Quotation PDF Template
+- Created quotation.blade.php PDF template
+- Designed professional layout with company logo
+- Added customer information section
+- Implemented line items table with calculations
+- Added terms and conditions footer
+
+Day 3: Purchase Order PDF Template
+- Created purchase-order.blade.php PDF template
+- Designed PO-specific layout with vendor details
+- Added approval section for signatures
+- Implemented item table with totals
+- Created PO-specific terms and conditions
+
+Day 4: Invoice PDF Template
+- Created invoice.blade.php PDF template
+- Designed invoice layout with payment information
+- Added payment history table
+- Implemented balance due highlighting
+- Added bank account information for payment
+
+Day 5: PDF Export Actions in Filament
+- Created QuotationPrintExporter class
+- Created PurchaseOrderPrintExporter class
+- Created InvoicePrintExporter class
+- Added "Print PDF" action buttons in resources
+- Tested PDF generation and download functionality
+
+
+WEEK 9 (Week 9 of Internship)
+-------------------------------------------------------------------------------
+Day 1: Excel Export - Setup
+- Installed filament/excel package
+- Configured export settings
+- Created Exporters directory structure
+- Set up base exporter classes
+- Tested basic Excel export
+
+Day 2: Transaction Excel Export
+- Created TransactionExporter class
+- Defined export columns (date, type, category, amount, etc.)
+- Implemented data formatting for Excel
+- Added filters for export (date range, type)
+- Tested export with large datasets
+
+Day 3: Invoice Excel Export
+- Created InvoiceExporter class
+- Defined invoice-specific columns
+- Implemented nested items export
+- Added payment information columns
+- Created formatted financial numbers
+
+Day 4: Quotation and PO Excel Export
+- Created QuotationExporter class
+- Created PurchaseOrderExporter class
+- Implemented item details in separate sheets
+- Added summary calculations
+- Tested multi-sheet exports
+
+Day 5: Export Actions Integration
+- Added export actions to all resource list pages
+- Implemented bulk export functionality
+- Created export notifications
+- Added export progress indicators
+- Documented export features in user guide
+
+
+================================================================================
+                              MONTH 3
+================================================================================
+
+WEEK 10 (Week 10 of Internship)
+-------------------------------------------------------------------------------
+Day 1: Frontend Pages Development - Home
+- Updated indexOne.blade.php homepage
+- Integrated hero section with project information
+- Added service showcase section
+- Implemented testimonial slider
+- Added call-to-action sections
+
+Day 2: Frontend Pages - About and Services
+- Created about.blade.php with company information
+- Built services.blade.php with service listings
+- Added service detail pages (serviceDetails.blade.php)
+- Implemented team member showcase
+- Added company statistics counter
+
+Day 3: Frontend Pages - Contact and Projects
+- Created contact.blade.php with contact form
+- Built project listing pages (projects.blade.php)
+- Implemented project filtering by category
+- Added project detail pages (projectDetails.blade.php)
+- Created project masonry layout
+
+Day 4: Frontend Controllers
+- Created HomeController for frontend routing
+- Implemented PageController for static pages
+- Built contact form submission logic
+- Added email notification for contact inquiries
+- Created form validation and error handling
+
+Day 5: Frontend Polish and Testing
+- Tested all frontend pages responsiveness
+- Fixed CSS conflicts between Bootstrap and Tailwind
+- Optimized images for faster loading
+- Implemented lazy loading for images
+- Added smooth scroll animations with AOS.js
+
+
+WEEK 11 (Week 11 of Internship)
+-------------------------------------------------------------------------------
+Day 1: Technical Documentation - Backend
+- Created BACKEND_TECHNICAL_DOCUMENTATION.md
+- Documented system architecture (MVC pattern)
+- Added database schema documentation with ERD
+- Documented model relationships and methods
+- Added use case diagrams
+
+Day 2: Technical Documentation - Mermaid Diagrams
+- Created MERMAID_DIAGRAMS.md
+- Built system architecture diagram
+- Created production infrastructure diagram
+- Added module architecture flowchart
+- Implemented purchasing workflow diagram
+
+Day 3: User Guide Documentation
+- Created FINANCE_PURCHASING_GUIDE.md
+- Documented transaction management workflow
+- Added quotation-to-invoice process guide
+- Created screenshot tutorials
+- Added troubleshooting section
+
+Day 4: Navigation and Dashboard Documentation
+- Created FILAMENT_NAVIGATION_GUIDE.md
+- Documented admin panel navigation structure
+- Added widget customization guide
+- Created dashboard configuration examples
+- Documented permission and role setup
+
+Day 5: Code Review and Refactoring
+- Conducted code review with supervisor
+- Refactored duplicate code into helper functions
+- Optimized database queries (N+1 problem fixes)
+- Improved error handling across modules
+- Added code comments for complex logic
+
+
+WEEK 12 (Week 12 of Internship)
+-------------------------------------------------------------------------------
+Day 1: Git Repository Setup
+- Initialized Git repository (git init)
+- Created comprehensive .gitignore file
+- Made initial commit (800+ files)
+- Set up GitHub repository (github.com/rafizeazy/akpager)
+- Configured git user and email
+
+Day 2: Version Control and Documentation
+- Created detailed README.md with project overview
+- Added installation instructions
+- Documented all features and modules
+- Added badges for Laravel, Filament, PHP versions
+- Pushed code to GitHub repository
+
+Day 3: Testing and Quality Assurance
+- Performed end-to-end testing of all modules
+- Created test scenarios for critical workflows
+- Tested with different user roles
+- Verified data integrity across relationships
+- Fixed remaining bugs and issues
+
+Day 4: Performance Optimization
+- Optimized database queries with eager loading
+- Implemented caching for frequently accessed data
+- Compressed and optimized frontend assets
+- Reduced page load times
+- Added database indexes for performance
+
+Day 5: Final Presentation and Handover
+- Prepared final presentation slides
+- Demonstrated all features to supervisor and team
+- Provided project walkthrough and documentation
+- Created deployment guide for production
+- Completed internship report and evaluation
+
+
+================================================================================
+                          SKILLS ACQUIRED
+================================================================================
+
+Technical Skills:
+- Laravel 11 Framework (MVC, Eloquent ORM, Blade, Migrations, Seeders)
+- Filament v4 Admin Panel (Resources, Widgets, Relations, Forms, Tables)
+- PHP 8.2 (OOP, Traits, Interfaces, Type Hinting)
+- MySQL Database Design and Optimization
+- Git Version Control (GitHub)
+- JavaScript (Alpine.js, Livewire, Chart.js)
+- CSS Frameworks (Tailwind CSS, Bootstrap 5)
+- PDF Generation (DomPDF)
+- Excel Export (OpenSpout)
+- Frontend Development (Blade Components, Responsive Design)
+
+Soft Skills:
+- Project Planning and Management
+- Technical Documentation Writing
+- Problem Solving and Debugging
+- Time Management
+- Team Collaboration
+- Code Review and Quality Assurance
+- Presentation and Communication
+
+================================================================================
+                          KEY ACHIEVEMENTS
+================================================================================
+
+1. Successfully developed complete Business Management System with 7 main modules
+2. Implemented finance tracking with real-time dashboard and widgets
+3. Built end-to-end purchasing workflow (Quotation → PO → Invoice → Payment)
+4. Created transaction-invoice integration with auto-fill feature
+5. Developed PDF export functionality for all documents
+6. Implemented Excel export for data analysis
+7. Built responsive frontend with blog system
+8. Created comprehensive technical documentation (5+ guides)
+9. Delivered project on time with 800+ files committed to GitHub
+10. Achieved 100% feature completion based on requirements
+
+================================================================================
+                          CHALLENGES FACED
+================================================================================
+
+1. Challenge: Complex invoice-transaction integration
+   Solution: Designed proper database schema with foreign keys and implemented 
+             Livewire live updates for auto-fill feature
+
+2. Challenge: Filament Section component not found error
+   Solution: Researched Filament v4 documentation and used alternative layout 
+             approach without Section components
+
+3. Challenge: N+1 query problem in dashboard widgets
+   Solution: Implemented eager loading and optimized database queries
+
+4. Challenge: PDF layout issues with DomPDF
+   Solution: Created custom CSS for PDF templates and tested with various 
+             data scenarios
+
+5. Challenge: CRLF line ending warnings in Git
+   Solution: Configured Git to handle line endings properly for Windows 
+             development environment
+
+================================================================================
+                      FUTURE IMPROVEMENTS
+================================================================================
+
+1. Add user roles and permissions (admin, finance, viewer)
+2. Implement email notifications for invoice due dates
+3. Add recurring transaction feature for regular expenses
+4. Create mobile app version with API backend
+5. Implement multi-currency support
+6. Add inventory management module
+7. Create advanced reporting with charts and analytics
+8. Implement approval workflow for large transactions
+9. Add document attachment storage with cloud integration
+10. Implement two-factor authentication for security
+
+================================================================================
+                          CONCLUSION
+================================================================================
+
+This 3-month internship provided invaluable hands-on experience in full-stack 
+web development using modern technologies. The AKPager Business Management System 
+project allowed me to work on real-world business problems and implement solutions 
+that could be used in production environments.
+
+I gained deep knowledge of Laravel framework, Filament admin panel, database 
+design, and full-stack development practices. The experience of building a 
+complete system from scratch, including documentation and deployment, has 
+significantly improved my technical and professional skills.
+
+I am grateful for the opportunity to work on this project and look forward to 
+applying these skills in future endeavors.
+
+================================================================================
+                          SIGNATURE
+================================================================================
+
+Intern Signature: _______________________    Date: _______________
+
+Supervisor Signature: ___________________    Date: _______________
+
+
+                          END OF REPORT
+================================================================================

@@ -2,6 +2,7 @@
 @section('title', 'About')
 @section('css')
 <style>
+   
     /* Custom styling for client logos to maintain original colors */
     .client-logo-area-two .client-logo-item.style-three {
         background: rgba(255, 255, 255, 0.95);
@@ -196,7 +197,7 @@
                     <div class="col-xl-3 col-lg-4 col-sm-6">
                         <div class="team-member" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50">
                             <div class="image">
-                                <img src="{{ asset('/assets/images/team/member1.png') }}" alt="Team">
+                                <img src="{{ asset('/assets/images/team/pict-1.jpg') }}" alt="Team">
                                 <div class="social-media">
                                     <a href="#"><i class="fab fa-twitter"></i></a>
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -205,7 +206,7 @@
                                 </div>
                             </div>
                             <div class="description">
-                                <h5>Jerome C. Ramirez</h5>
+                                <h5>AGUS DEDI</h5>
                                 <span class="designation">CEO & Founder</span>
                             </div>
                         </div>
@@ -213,7 +214,7 @@
                     <div class="col-xl-3 col-lg-4 col-sm-6">
                         <div class="team-member" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-offset="50">
                             <div class="image">
-                                <img src="{{ asset('/assets/images/team/member2.png') }}" alt="Team">
+                                <img src="{{ asset('/assets/images/team/pict-2.png') }}" alt="Team">
                                 <div class="social-media">
                                     <a href="#"><i class="fab fa-twitter"></i></a>
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -222,15 +223,15 @@
                                 </div>
                             </div>
                             <div class="description">
-                                <h5>Reginald F. Richardson</h5>
-                                <span class="designation">Senior Manager</span>
+                                <h5>HERU CAHYO P</h5>
+                                <span class="designation">Chief Marketing Officer</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-4 col-sm-6">
                         <div class="team-member" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-offset="50">
                             <div class="image">
-                                <img src="{{ asset('/assets/images/team/member3.png') }}" alt="Team">
+                                <img src="{{ asset('/assets/images/team/pict-3.png') }}" alt="Team">
                                 <div class="social-media">
                                     <a href="#"><i class="fab fa-twitter"></i></a>
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -239,15 +240,15 @@
                                 </div>
                             </div>
                             <div class="description">
-                                <h5>Patrick D. Kozlowski</h5>
-                                <span class="designation">Web Designer</span>
+                                <h5>MIIRWAN PURNAMA</h5>
+                                <span class="designation">Chief RnD Agronomist</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-4 col-sm-6">
                         <div class="team-member" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000" data-aos-offset="50">
                             <div class="image">
-                                <img src="{{ asset('/assets/images/team/member4.png') }}" alt="Team">
+                                <img src="{{ asset('/assets/images/team/pict-4.png') }}" alt="Team">
                                 <div class="social-media">
                                     <a href="#"><i class="fab fa-twitter"></i></a>
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -256,8 +257,8 @@
                                 </div>
                             </div>
                             <div class="description">
-                                <h5>Patrick M. Piazza</h5>
-                                <span class="designation">Junior manager</span>
+                                <h5>ALI IKHWAN HABIBIE</h5>
+                                <span class="designation">Chief Technology Officer</span>
                             </div>
                         </div>
                     </div>

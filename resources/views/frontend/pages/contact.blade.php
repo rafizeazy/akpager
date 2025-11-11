@@ -6,7 +6,7 @@
     <!-- header area end -->
 
         <!-- Page Banner Start -->
-        <section class="page-banner-area overlay py-250 rpy-120 rel z-1 bgs-cover text-center" style="background-image: url({{ asset('assets/images/backgrounds/banner.jpg') }});">
+        <section class="page-banner-area overlay py-250 rpy-120 rel z-1 bgs-cover text-center" style="background-image: url({{ asset('assets/images/hero.png') }});">
             <div class="container">
                 <div class="banner-inner pt-70 rpt-60 text-white">
                     <h1 class="page-title" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">Contact Us</h1>
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="content">
                                     <span class="title">Location</span>
-                                    <span class="text">55 Main Street, 2nd block Melbourne, Australia</span>
+                                    <span class="text">Grand Cikarang City Blok G12 No.04, Bekasi, Indonesia</span>
                                 </div>
                             </div>
                             <div class="contact-info-item style-two" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1500" data-aos-offset="50">
@@ -48,7 +48,7 @@
                                 <div class="content">
                                     <span class="title">Email Address</span>
                                     <span class="text">
-                                        <a href="mailto:support@gmail.com">support@gmail.com</a>
+                                        <a href="mailto:support@gmail.com">agusds@cvsmartplus.com</a>
                                     </span>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                                 <div class="content">
                                     <span class="title">Make A Call</span>
                                     <span class="text">
-                                        <a href="calto:+000(123)456889">+000 (123) 456 889</a>
+                                        <a href="calto:+000(123)456889">(021) 89120117</a>
                                     </span>
                                 </div>
                             </div>
@@ -76,14 +76,14 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="name">Full Name</label>
-                                            <input type="text" id="name" name="name" class="form-control" value="" placeholder="Somaia D. Silva" required data-error="Please enter your Name">
+                                            <input type="text" id="name" name="name" class="form-control" value="" placeholder="Agus Dedi Supriyadi" required data-error="Please enter your Name">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="email">Email</label>
-                                            <input type="email" id="email" name="email" class="form-control" value="" placeholder="support@gmail.com" required data-error="Please enter your Email">
+                                            <input type="email" id="email" name="email" class="form-control" value="" placeholder="agusds@cvsmartplus.com" required data-error="Please enter your Email">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
@@ -120,7 +120,7 @@
         <!-- Location Map Area Start -->
         <div class="contact-page-map">
             <div class="our-location">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d96777.16150026117!2d-74.00840582560909!3d40.71171357405996!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1706508986625!5m2!1sen!2sbd" style="border:0; width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31728.31541366821!2d107.174332!3d-6.258537!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6985b021ecbf8b%3A0xffacd8916d798018!2sSmartplus%20Workshop!5e0!3m2!1sid!2sid!4v1762702290596!5m2!1sid!2sid" style="border:0; width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
         <!-- Location Map Area End -->

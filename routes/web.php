@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController\HomeController;
 use App\Http\Controllers\FrontendController\PageController;
 use App\Http\Controllers\FrontendController\DashboardController;
+use App\Http\Controllers\Auth\LoginController;
 
 /**
  *    Frontend
@@ -64,4 +65,10 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('dashboard', 'index')->name('dashboard');
     Route::get('dashboard/export', 'export')->name('dashboard.export');
 });
+
+// Auth Routes
+Route::post('login', [LoginController::class, 'login'])->name('login');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
+// Reset Password Route (handled by Filament)
 

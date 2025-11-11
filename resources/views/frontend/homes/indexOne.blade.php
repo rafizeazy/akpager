@@ -109,9 +109,7 @@
                 <div class="col-lg-6">
                     <div class="about-images my-40" data-aos="fade-left" data-aos-duration="1500" data-aos-offset="50">
                         <img src="{{ asset('/assets/images/about/about.jpg') }}" alt="About">
-                        <div class="about-over">
-                            <img src="{{ asset('/assets/images/about/about2.png') }}" alt="About">
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -546,137 +544,8 @@
     <!-- Management Area End -->
     
     
-    <!-- Testimonials Area Start -->
-    <section class="testimonials-area pt-130 rpt-100 pb-80 rpb-50">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-7 col-lg-9 col-md-11">
-                    <div class="section-title text-center mb-60" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
-                        <h2>What Our Clients Say About PT Smartplus Indonesia</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="marquee-slider-right testi-slider-right">
-            <div class="testimonial-item">
-                <div class="author">
-                    <div class="image">
-                        <img src="{{ asset('/assets/images/testimonials/author1.png') }}" alt="Author">
-                    </div>
-                    <div class="title"><b>Rafi</b></div>
-                </div>
-                <div class="author-text">At vero eoset accusamus iusto dignissimos ducimus blanditiis praesentium voluptatume delenitie corruptie dolores molestias</div>
-                <div class="testi-footer">
-                    <div class="ratting">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="testimonial-item">
-                <div class="author">
-                    <div class="image">
-                        <img src="{{ asset('/assets/images/testimonials/author2.png') }}" alt="Author">
-                    </div>
-                    <div class="title"><b>Nicholas S. Moore /</b> Manager</div>
-                </div>
-                <div class="author-text">At vero eoset accusamus iusto dignissimos ducimus blanditiis praesentium voluptatume delenitie corruptie dolores molestias</div>
-                <div class="testi-footer">
-                    <div class="ratting">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <span class="text"><span>4.7/5</span> on Trustpilot</span>
-                </div>
-            </div>
-            <div class="testimonial-item">
-                <div class="author">
-                    <div class="image">
-                        <img src="{{ asset('/assets/images/testimonials/author3.png') }}" alt="Author">
-                    </div>
-                    <div class="title"><b>Mark S. Dearing /</b> Designer</div>
-                </div>
-                <div class="author-text">At vero eoset accusamus iusto dignissimos ducimus blanditiis praesentium voluptatume delenitie corruptie dolores molestias</div>
-                <div class="testi-footer">
-                    <div class="ratting">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <span class="text"><span>4.7/5</span> on Trustpilot</span>
-                </div>
-            </div>
-        </div>
-        <div class="marquee-slider-left testi-slider-left" dir="rtl">
-            <div class="testimonial-item">
-                <div class="author">
-                    <div class="image">
-                        <img src="{{ asset('/assets/images/testimonials/author5.png') }}" alt="Author">
-                    </div>
-                    <div class="title"><b>Joseph D. Tucker / </b> Consultant</div>
-                </div>
-                <div class="author-text">At vero eoset accusamus iusto dignissimos ducimus blanditiis praesentium voluptatume delenitie corruptie dolores molestias</div>
-                <div class="testi-footer">
-                    <div class="ratting">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <span class="text"><span>4.7/5</span> on Trustpilot</span>
-                </div>
-            </div>
-            <div class="testimonial-item">
-                <div class="author">
-                    <div class="image">
-                        <img src="{{ asset('/assets/images/testimonials/author6.png') }}" alt="Author">
-                    </div>
-                    <div class="title"><b>Wiley D. Swanson / </b> Businessman</div>
-                </div>
-                <div class="author-text">At vero eoset accusamus iusto dignissimos ducimus blanditiis praesentium voluptatume delenitie corruptie dolores molestias</div>
-                <div class="testi-footer">
-                    <div class="ratting">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <span class="text"><span>4.7/5</span> on Trustpilot</span>
-                </div>
-            </div>
-            <div class="testimonial-item">
-                <div class="author">
-                    <div class="image">
-                        <img src="{{ asset('/assets/images/testimonials/author7.png') }}" alt="Author">
-                    </div>
-                    <div class="title"><b>Steven J. Ung / </b> JR Manager</div>
-                </div>
-                <div class="author-text">At vero eoset accusamus iusto dignissimos ducimus blanditiis praesentium voluptatume delenitie corruptie dolores molestias</div>
-                <div class="testi-footer">
-                    <div class="ratting">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <span class="text"><span>4.7/5</span> on Trustpilot</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Testimonials Area End -->
+    <br>
+    <br>
     
     
     <!-- Blog Area Start -->

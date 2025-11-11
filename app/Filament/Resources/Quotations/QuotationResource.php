@@ -45,7 +45,7 @@ class QuotationResource extends Resource
         return $schema
             ->components([
                 TextInput::make('quotation_number')
-                    ->default(fn () => 'QUO-' . date('Y') . '-' . str_pad((\App\Models\Quotation::whereYear('created_at', date('Y'))->count() + 1), 5, '0', STR_PAD_LEFT))
+                    ->default(fn () => 'Q/SPI/X/' . date('Y') . str_pad((\App\Models\Quotation::whereYear('created_at', date('Y'))->count() + 1), 5, '0', STR_PAD_LEFT))
                     ->disabled()
                     ->dehydrated()
                     ->required(),

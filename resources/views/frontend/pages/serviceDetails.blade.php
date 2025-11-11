@@ -6,7 +6,7 @@
     <!-- header area end -->
 
         <!-- Page Banner Start -->
-        <section class="page-banner-area overlay py-250 rpy-120 rel z-1 bgs-cover text-center" style="background-image: url({{ asset('assets/images/backgrounds/banner.jpg') }});">
+        <section class="page-banner-area overlay py-250 rpy-120 rel z-1 bgs-cover text-center" style="background-image: url({{ asset('assets/images/hero.png') }});">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-9 col-lg-11">
